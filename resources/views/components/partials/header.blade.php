@@ -26,9 +26,9 @@
 
         <div class="text-right hidden sm:block">
             <div class="text-sm font-semibold leading-tight">
-                {{ auth()->user()->name ?? 'Pengguna' }}
+                {{ auth()->user()->nama ?? auth()->user()->name ?? 'Pengguna' }}
             </div>
-            <div class="text-xs text-base-content/50 leading-tight">
+            <div class="text-xs text-base-content/50 leading-tight capitalize">
                 {{ auth()->user()->role ?? 'Admin Sistem' }}
             </div>
         </div>
@@ -36,7 +36,7 @@
         <div class="avatar">
             <div class="w-10 h-10 rounded-full bg-primary text-primary-content flex items-center justify-center">
                 <span class="text-sm font-semibold leading-none">
-                    {{ strtoupper(substr(auth()->user()->name ?? 'U', 0, 1)) }}
+                    {{ strtoupper(substr(auth()->user()->nama ?? auth()->user()->name ?? 'U', 0, 1)) }}
                 </span>
             </div>
         </div>
